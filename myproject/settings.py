@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'example',
-    'pokemaoc'
-]
+    'pokemaoc',
+    'accounts',
+   ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
