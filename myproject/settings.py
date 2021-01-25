@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'example',
     'pokemaoc',
-    'accounts',
+    'users',
    ]
 
 MIDDLEWARE = [
@@ -121,3 +121,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+LOGIN_REDIRECT_URL = "dashboard"
+
+LOGOUT_REDIRECT_URL = "dashboard"
+
+EMAIL_HOST = "localhost"
+EMAIL_PORT = 1025
