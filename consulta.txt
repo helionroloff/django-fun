@@ -1,12 +1,99 @@
+=======================================================================================
+---------------------------------------------------------------------------------------
 - selecionar todos os artigos de determinado reporter
+>>> Article.objects.filter(reporter_id = 1)  
+<QuerySet []>
 
+>>> Article.objects.filter(reporter_id = 2) 
+<QuerySet []>
+
+>>> Article.objects.filter(reporter_id = 3) 
+<QuerySet []>
+
+>>> Article.objects.filter(reporter_id = 4) 
+<QuerySet [<Article: o grande jogador>]>
+
+>>> Article.objects.filter(reporter_id = 5) 
+<QuerySet [<Article: mercado do esporte>, <Article: o atleta>]>
+
+>>> Article.objects.filter(reporter_id = 6) 
+<QuerySet [<Article: vida ou bola?>]>
+
+>>> Article.objects.filter(reporter_id = 7)  
+<QuerySet [<Article: o rei da bola>]>
+
+>>> Article.objects.filter(reporter_id = 8)  
+<QuerySet []>
+
+=======================================================================================
+=======================================================================================
+---------------------------------------------------------------------------------------
 - todos os artigos entre 2019 e 2020
 
-- reporter com mais artigos em 2020
+>>> Article.objects.filter(pub_date__year__gte=2019).filter(pub_date__year__lte=2020) 
+<QuerySet []>
 
+=======================================================================================
+=======================================================================================
+---------------------------------------------------------------------------------------
+- reporter com mais artigos em 2021
+
+
+
+=======================================================================================
+=======================================================================================
+---------------------------------------------------------------------------------------
 - artigos que contenham a palavra 'python' e tenham sido
 publicados por determinado reporter em abril de 2015
 
-- a quantidade de publicações que tenham a letra 'i'
+>>> Article.objects.filter(headline__icontains = 'python').filter(pub_date__year=2015).filter(pub_date__month=4).filter(reporter_id=1)  
+<QuerySet []>
 
+>>> Article.objects.filter(headline__icontains = 'python').filter(pub_date__year=2015).filter(pub_date__month=4).filter(reporter_id=2)  
+<QuerySet []>
+
+>>> Article.objects.filter(headline__icontains = 'python').filter(pub_date__year=2015).filter(pub_date__month=4).filter(reporter_id=3)  
+<QuerySet []>
+
+>>> Article.objects.filter(headline__icontains = 'python').filter(pub_date__year=2015).filter(pub_date__month=4).filter(reporter_id=4)  
+<QuerySet []>
+
+>>> Article.objects.filter(headline__icontains = 'python').filter(pub_date__year=2015).filter(pub_date__month=4).filter(reporter_id=5)  
+<QuerySet []>
+
+>>> Article.objects.filter(headline__icontains = 'python').filter(pub_date__year=2015).filter(pub_date__month=4).filter(reporter_id=6)  
+<QuerySet []>
+
+>>> Article.objects.filter(headline__icontains = 'python').filter(pub_date__year=2015).filter(pub_date__month=4).filter(reporter_id=7)  
+<QuerySet []>
+
+>>> Article.objects.filter(headline__icontains = 'python').filter(pub_date__year=2015).filter(pub_date__month=4).filter(reporter_id=8)  
+<QuerySet []>
+
+
+=======================================================================================
+=======================================================================================
+---------------------------------------------------------------------------------------
+- artigos que contenham a palavra 'bola' e tenham sido
+publicados por determinado reporter em janeiro de 2021
+
+>>> Article.objects.filter(headline__icontains = 'bola').filter(pub_date__year=2021).filter(pub_date__month=1)     
+<QuerySet [<Article: o rei da bola>, <Article: vida ou bola?>]>
+>>> 
+
+
+
+=======================================================================================
+=======================================================================================
+---------------------------------------------------------------------------------------
+- a quantidade de publicações que tenham a letra 'i'
+>>> Publication.objects.filter(title__icontains='i')    
+<QuerySet [<Publication: enciclopedia barça>, <Publication: enciclopedia barça>, <Publication: revista empreendedor do esporte>, 
+<Publication: revista exame>, <Publication: revista forbes sports>, <Publication: revista france football>, <Publication: revista galileu>, 
+<Publication: revista placar>, <Publication: revista placar>, <Publication: sports science>]>
+
+=======================================================================================
+=======================================================================================
+---------------------------------------------------------------------------------------
 - a media de publicações por artigo
+
