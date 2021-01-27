@@ -1,0 +1,12 @@
+- selecionar todos os artigos de determinado reporter
+
+- todos os artigos entre 2019 e 2020
+
+- reporter com mais artigos em 2020
+
+- artigos que contenham a palavra 'python' e tenham sido
+publicados por determinado reporter em abril de 2015
+
+- a quantidade de publicações que tenham a letra 'i'
+
+- a media de publicações por artigo
