@@ -104,3 +104,9 @@ publicados por determinado reporter em janeiro de 2021
 ---------------------------------------------------------------------------------------
 - a media de publicações por artigo
 
+>>> artigos = Article.objects.annotate(num_publicacoes = Count('publications')).aggregate(Avg('num_publicacoes'))  
+>>> artigos
+{'num_publicacoes__avg': 2.4}
+
+
+
