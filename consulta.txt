@@ -38,6 +38,13 @@
 ---------------------------------------------------------------------------------------
 - reporter com mais artigos em 2021
 
+>>> from example.models import Reporter, Article, Publication
+>>> from django.db.models import Count
+>>> reporteres = Reporter.objects.filter(article__pub_date__year = 2021).annotate(num_art = Count('article')).order_by('-num_art')[:1]  
+>>> reporteres
+<QuerySet [<Reporter: carlos alberto>]>
+>>> 
+
 
 
 =======================================================================================
